@@ -1,0 +1,118 @@
+{
+  "scopeName": "source.silex",
+  "patterns": [
+    {
+      "name": "entity.name.type.struct.silex",
+      "match": "\\bstruct\\s+[A-Za-z_][A-Za-z0-9_]*\\b"
+    },
+    {
+      "name": "entity.name.type.enum.silex",
+      "match": "\\benum\\s+[A-Za-z_][A-Za-z0-9_]*\\b"
+    },
+    {
+      "name": "entity.name.type.enum.parent.silex",
+      "match": "\\b([A-Za-z_][A-Za-z0-9_]*)::",
+      "captures": {
+        "1": { "name": "support.type.primitive" }
+      }
+    },
+    {
+      "name": "variable.declaration.silex",
+      "match": "\\b(let(?:\\s+mut)?)\\s+([A-Za-z_][A-Za-z0-9_]*)\\s*:\\s*(?=[A-Za-z_][A-Za-z0-9_<>,\\s]*\\s*(\\[\\])?\\s*=)",
+      "captures": {
+        "1": { "name": "let.silex" },
+        "2": { "name": "variable.other.silex" }
+      }
+    },
+    {
+      "name": "variable.other.constant.silex",
+      "match": "\\bconst\\s+[A-Za-z_][A-Za-z0-9_]*\\b"
+    },
+    {
+      "name": "entity.name.function.silex",
+      "match": "\\b[A-Za-z_][A-Za-z0-9_]*\\s*(?=\\()"
+    },
+    {
+      "name": "keyword.operator.accessor.silex",
+      "match": "\\."
+    },
+    {
+      "name": "variable.language.array.silex",
+      "match": "\\b[A-Za-z_][A-Za-z0-9_]*\\[\\]"
+    },
+    {
+      "name": "support.type.primitive.silex",
+      "match": "\\b(u8|u16|u32|u64|u128|u256|bool|string)\\b"
+    },
+    {
+      "name": "support.type.optional.silex",
+      "match": "\\boptional<[A-Za-z_][A-Za-z0-9_]*>\\b"
+    },
+    {
+      "name": "support.function.optional.silex",
+      "match": "\\b(is_none|is_some|unwrap|unwrap_or)\\b"
+    },
+    {
+      "name": "variable.language.map.silex",
+      "match": "\\bmap<[A-Za-z0-9_ ,]+>\\b"
+    },
+    {
+      "name": "keyword.operator.range.silex",
+      "match": "\\.\\."
+    },
+    {
+      "name": "keyword.operator.accessor.silex",
+      "match": "\\."
+    },
+    {
+      "name": "keyword.operator.logical.silex",
+      "match": "\\b(and|or|not)\\b|&&|\\|\\||!"
+    },
+    {
+      "name": "keyword.operator.comparison.silex",
+      "match": "==|!=|<|>|<=|>="
+    },
+    {
+      "name": "keyword.operator.cast.silex",
+      "match": "\\bas\\b"
+    },
+    {
+      "name": "constant.numeric.silex",
+      "match": "\\b\\d+(_u8|_u16|_u32|_u64|_u128|_u256)?\\b"
+    },
+    {
+      "name": "string.quoted.double.silex",
+      "begin": "\"",
+      "end": "\"",
+      "patterns": [
+        {
+          "name": "constant.character.escape.silex",
+          "match": "\\\\."
+        }
+      ]
+    },
+    {
+      "name": "comment.line.double-slash.silex",
+      "begin": "//",
+      "end": "$"
+    },
+    {
+      "name": "punctuation.definition.keyword.silex",
+      "match": "[{}();,\\[\\]]"
+    },
+    {
+      "name": "keyword.control.silex",
+      "match": "\\b(let|fn|if|else|while|for|return|self|true|false|import|struct|enum|const|entry)\\b"
+    },
+    {
+      "name": "variable.standalone.silex",
+      "match": "\\b([A-Za-z_][A-Za-z0-9_]*)\\b",
+      "captures": {
+        "1": { "name": "variable.other.silex" }
+      }
+    }
+  ],
+  "repository": {},
+  "fileTypes": ["slx"],
+  "name": "Silex"
+}

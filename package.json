@@ -1,0 +1,92 @@
+{
+  "name": "silex-vsc",
+  "displayName": "Silex Language Extension",
+  "description": "Syntax highlighting for the Silex contract Language on Xelis",
+  "version": "0.0.1",
+  "main": "client/index.js",
+  "engines": {
+    "vscode": "^1.60.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "themes": [
+      {
+        "label": "Silex Theme",
+        "uiTheme": "vs-dark",
+        "path": "./themes/silex-color-theme.json"
+      }
+    ],
+    "languages": [
+      {
+        "id": "silex",
+        "aliases": [
+          "Silex"
+        ],
+        "extensions": [
+          ".xel"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "silex",
+        "scopeName": "source.silex",
+        "path": "./syntaxes/silex.tmLanguage.json"
+      }
+    ],
+    "iconThemes": [
+      {
+        "id": "silex-icons",
+        "label": "Silex Icons",
+        "path": "./file-icon-theme.json"
+      }
+    ],
+    "configuration": {
+			"type": "object",
+			"title": "silexLanguageServer",
+			"properties": {
+				"silexLanguageServer.trace.server": {
+					"type": "string",
+					"scope": "window",
+					"enum": [
+						"off",
+						"messages",
+						"verbose"
+					],
+					"enumDescriptions": [
+						"No traces",
+						"Error only",
+						"Full log"
+					],
+					"default": "off",
+					"description": "Traces the communication between VS Code and the language server."
+				}
+			}
+		}
+  },
+  "activationEvents": ["onLanguage:silex"],
+  "files": [
+      "client/**",
+      "server/**",
+      "syntaxes/**",
+      "language-configuration.json"
+  ],
+  "scripts": {
+    "vscode:prepublish": "npm run compile"
+  },
+  "author": "Tritonn",
+  "license": "ISC",
+  "keywords": [
+    "syntax",
+    "highlighting",
+    "silex",
+    "xelis",
+    "language"
+  ],
+  "dependencies": {
+    "vscode-languageclient": "^9.0.1"
+  }
+}

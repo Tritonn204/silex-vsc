@@ -1,0 +1,89 @@
+{
+  "name": "Silex Theme",
+  "type": "dark",
+  "colors": {
+    "editor.background": "#1e1e1e",
+    "editor.foreground": "#d4d4d4"
+  },
+  "tokenColors": [
+    {
+      "scope": "keyword.control.silex",
+      "settings": {
+        "foreground": "#c586c0",
+        "fontStyle": "bold"
+      }
+    },
+    {
+      "scope": "entity.name.type.struct.silex",
+      "settings": {
+        "foreground": "#569cd6"
+      }
+    },
+    {
+      "scope": "entity.name.type.enum.silex",
+      "settings": {
+        "foreground": "#569cd6"
+      }
+    },
+    {
+      "scope": "constant.numeric.silex",
+      "settings": {
+        "foreground": "#b5cea8"
+      }
+    },
+    {
+      "scope": "let.silex",
+      "settings": {
+        "foreground": "#348fde"
+      }
+    },
+    {
+      "scope": "string.quoted.double.silex",
+      "settings": {
+        "foreground": "#ce9178"
+      }
+    },
+    {
+      "scope": "comment.line.double-slash.silex",
+      "settings": {
+        "foreground": "#6a9955",
+        "fontStyle": "italic"
+      }
+    },
+    {
+      "name": "Storage Types",
+      "scope": "storage.type.silex",
+      "settings": {
+        "foreground": "#05fad1"
+      }
+    },
+    {
+      "name": "Primitive Types",
+      "scope": "support.type.primitive",
+      "settings": {
+        "foreground": "#05fad1"
+      }
+    },
+    {
+      "name": "Function Calls",
+      "scope": "entity.name.function.silex",
+      "settings": {
+        "foreground": "#fffecc"
+      }
+    },
+    {
+      "name": "Variables Standalone",
+      "scope": "variable.other.silex",
+      "settings": {
+        "foreground": "#9df0fb"
+      }
+    },
+    {
+      "name": "Array Index Variables",
+      "scope": "variable.language.index.silex",
+      "settings": {
+        "foreground": "#8BE9FD"
+      }
+    },
+  ]
+}

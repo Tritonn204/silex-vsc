@@ -1,0 +1,14 @@
+{
+  "iconDefinitions": {
+    "xelIcon": {
+      "iconPath": "./icons/xel-icon.svg"
+    }
+  },
+  "fileExtensions": {
+    "xel": "xelIcon"
+  },
+  "folderNames": {},
+  "languageIds": {
+    "silex": "xelIcon"
+  }
+}
