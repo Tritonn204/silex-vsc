@@ -1,6 +1,6 @@
 const path = require('path');
 const vscode = require('vscode');
-const { LanguageClient, LanguageClientOptions, TransportKind } = require('vscode-languageclient/node');
+const { LanguageClient, LanguageClientOptions, TransportKind, Trace } = require('vscode-languageclient/node');
 
 let client;
 
@@ -31,9 +31,20 @@ function activate(context) {
   const clientOptions = {
     documentSelector: [{ scheme: 'file', language: 'silex' }],
     synchronize: {
+      configurationSection: 'editor',
       fileEvents: vscode.workspace.createFileSystemWatcher('**/.clientrc'),
     },
+    initializationOptions: {
+      tabSize: vscode.workspace.getConfiguration('editor').get('tabSize', 4),
+    },
+    middleware: {
+      sendRequest: (method, params, token, next) => {
+        console.log(`[Client] Sending Request: ${method}`, params);
+        return next(method, params, token);
+      },
+    },
     traceOutputChannel,
+    trace: 2,
   };
 
   client = new LanguageClient(
@@ -44,6 +55,10 @@ function activate(context) {
   );
 
   client.start();
+
+  client.onNotification((method, params) => {
+    console.log(`[Client] Received Notification: ${method}`, params);
+  });
 }
 
 function deactivate() {

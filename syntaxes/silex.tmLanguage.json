@@ -2,6 +2,10 @@
   "scopeName": "source.silex",
   "patterns": [
     {
+      "name": "keyword.control.silex",
+      "match": "\\b(fn|if|else|while|for|return|self|true|false|import|namespace|struct|enum|const|entry)\\b"
+    },
+    {
       "name": "entity.name.type.struct.silex",
       "match": "\\bstruct\\s+[A-Za-z_][A-Za-z0-9_]*\\b"
     },
@@ -104,10 +108,6 @@
     {
       "name": "punctuation.definition.keyword.silex",
       "match": "[{}();,\\[\\]]"
-    },
-    {
-      "name": "keyword.control.silex",
-      "match": "\\b(let|fn|if|else|while|for|return|self|true|false|import|namespace|struct|enum|const|entry)\\b"
     },
     {
       "name": "variable.standalone.silex",

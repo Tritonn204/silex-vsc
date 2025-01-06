@@ -10,6 +10,7 @@
   "categories": [
     "Programming Languages"
   ],
+  "editor.semanticHighlighting.enabled": true,
   "contributes": {
     "themes": [
       {
@@ -42,7 +43,7 @@
         "id": "silex-icons",
         "label": "Silex Icons",
         "path": "./file-icon-theme.json"
-      }
+      } 
     ],
     "configuration": {
 			"type": "object",
@@ -54,7 +55,7 @@
 					"enum": [
 						"off",
 						"messages",
-						"verbose"
+						"verbose" 
 					],
 					"enumDescriptions": [
 						"No traces",
@@ -65,9 +66,22 @@
 					"description": "Traces the communication between VS Code and the language server."
 				}
 			}
-		}
+		},
+    "configurationDefaults": {
+      "[silex]": {
+         "editor.semanticHighlighting.enabled": true
+      }
+    },
+    "commands": [
+      {
+        "command": "silex.forceSemanticTokens",
+        "title": "Silex: Force Semantic Tokens Request"
+      }
+    ]
   },
-  "activationEvents": ["onLanguage:silex"],
+  "activationEvents": [
+      "onLanguage:silex"
+  ],
   "files": [
       "client/**",
       "server/**",
