@@ -37,12 +37,6 @@ function activate(context) {
     initializationOptions: {
       tabSize: vscode.workspace.getConfiguration('editor').get('tabSize', 4),
     },
-    middleware: {
-      sendRequest: (method, params, token, next) => {
-        console.log(`[Client] Sending Request: ${method}`, params);
-        return next(method, params, token);
-      },
-    },
     traceOutputChannel,
     trace: 2,
   };
