@@ -97,12 +97,17 @@
       "end": "$"
     },
     {
+      "name": "comment.block.silex",
+      "begin": "/\\*",
+      "end": "\\*/"
+    },
+    {
       "name": "punctuation.definition.keyword.silex",
       "match": "[{}();,\\[\\]]"
     },
     {
       "name": "keyword.control.silex",
-      "match": "\\b(let|fn|if|else|while|for|return|self|true|false|import|struct|enum|const|entry)\\b"
+      "match": "\\b(let|fn|if|else|while|for|return|self|true|false|import|namespace|struct|enum|const|entry)\\b"
     },
     {
       "name": "variable.standalone.silex",

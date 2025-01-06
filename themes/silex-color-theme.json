@@ -47,7 +47,12 @@
       "scope": "comment.line.double-slash.silex",
       "settings": {
         "foreground": "#6a9955",
-        "fontStyle": "italic"
+      }
+    },
+    {
+      "scope": "comment.block.silex",
+      "settings": {
+        "foreground": "#6a9955",
       }
     },
     {
