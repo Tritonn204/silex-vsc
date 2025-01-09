@@ -20,8 +20,8 @@ function getServerBinaryPath() {
 }
 
 function activate(context) {
-  const serverBinary = getServerBinaryPath();
   const traceOutputChannel = vscode.window.createOutputChannel("Silex Language Server trace");
+  const serverBinary = getServerBinaryPath();
 
   const serverOptions = {
     run: { command: serverBinary, transport: TransportKind.stdio },
@@ -31,14 +31,9 @@ function activate(context) {
   const clientOptions = {
     documentSelector: [{ scheme: 'file', language: 'silex' }],
     synchronize: {
-      configurationSection: 'editor',
       fileEvents: vscode.workspace.createFileSystemWatcher('**/.clientrc'),
     },
-    initializationOptions: {
-      tabSize: vscode.workspace.getConfiguration('editor').get('tabSize', 4),
-    },
-    traceOutputChannel,
-    trace: 2,
+    traceOutputChannel
   };
 
   client = new LanguageClient(
@@ -49,10 +44,6 @@ function activate(context) {
   );
 
   client.start();
-
-  client.onNotification((method, params) => {
-    console.log(`[Client] Received Notification: ${method}`, params);
-  });
 }
 
 function deactivate() {

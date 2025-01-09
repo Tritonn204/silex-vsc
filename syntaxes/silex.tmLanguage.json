@@ -3,7 +3,7 @@
   "patterns": [
     {
       "name": "keyword.control.silex",
-      "match": "\\b(fn|if|else|while|for|return|self|true|false|import|namespace|struct|enum|const|entry)\\b"
+      "match": "\\b(fn|if|else|while|for|foreach|continue|break|return|self|true|false|import|namespace|struct|enum|const|entry)\\b"
     },
     {
       "name": "entity.name.type.struct.silex",
@@ -17,16 +17,24 @@
       "name": "entity.name.type.enum.parent.silex",
       "match": "\\b([A-Za-z_][A-Za-z0-9_]*)::",
       "captures": {
-        "1": { "name": "support.type.primitive" }
+        "1": { "name": "support.type.namespace" }
       }
     },
     {
       "name": "variable.declaration.silex",
       "match": "\\b(let(?:\\s+mut)?)\\s+([A-Za-z_][A-Za-z0-9_]*)\\s*:\\s*(?=[A-Za-z_][A-Za-z0-9_<>,\\s]*\\s*(\\[\\])?\\s*=)",
       "captures": {
-        "1": { "name": "let.silex" },
+        "1": { "name": "keyword.let.silex" },
         "2": { "name": "variable.other.silex" }
       }
+    },
+    {
+      "name": "keyword.let.silex",
+      "match": "\\b(let)\\b"
+    },
+    {
+      "name": "keyword.mod.silex",
+      "match": "\\b(in|as)\\b"
     },
     {
       "name": "variable.other.constant.silex",
@@ -35,6 +43,14 @@
     {
       "name": "entity.name.function.silex",
       "match": "\\b[A-Za-z_][A-Za-z0-9_]*\\s*(?=\\()"
+    },
+    {
+      "name": "entity.name.type.constant.silex",
+      "match": "\\b[A-Z_][A-Z0-9_]*\\b"
+    },
+    {
+      "name": "entity.name.type.silex",
+      "match": "\\b[A-Z][a-zA-Z0-9_]*\\b"
     },
     {
       "name": "keyword.operator.accessor.silex",
@@ -81,7 +97,7 @@
       "match": "\\bas\\b"
     },
     {
-      "name": "constant.numeric.silex",
+      "name": "literal.numeric.silex",
       "match": "\\b\\d+(_u8|_u16|_u32|_u64|_u128|_u256)?\\b"
     },
     {

@@ -10,7 +10,6 @@
   "categories": [
     "Programming Languages"
   ],
-  "editor.semanticHighlighting.enabled": true,
   "contributes": {
     "themes": [
       {

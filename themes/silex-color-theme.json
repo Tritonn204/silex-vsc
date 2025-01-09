@@ -26,13 +26,27 @@
       }
     },
     {
-      "scope": "constant.numeric.silex",
+      "scope": "literal.numeric.silex",
       "settings": {
-        "foreground": "#b5cea8"
+        "foreground": "#b5cea8",
+        "fontStyle": "bold"
       }
     },
     {
-      "scope": "let.silex",
+      "scope": "entity.name.type.constant.silex",
+      "settings": {
+        "foreground": "#ffdd32",
+        "fontStyle": "bold"
+      }
+    },
+    {
+      "scope": "keyword.let.silex",
+      "settings": {
+        "foreground": "#348fde"
+      }
+    },
+    {
+      "scope": "keyword.mod.silex",
       "settings": {
         "foreground": "#348fde"
       }
@@ -56,17 +70,44 @@
       }
     },
     {
+      "scope": "entity.name.type.silex",
+      "settings": {
+        "foreground": "#4EC9B0"
+      }
+    },
+    {
       "name": "Storage Types",
       "scope": "storage.type.silex",
       "settings": {
-        "foreground": "#05fad1"
+        "foreground": "#4EC9B0"
       }
     },
     {
       "name": "Primitive Types",
       "scope": "support.type.primitive",
       "settings": {
-        "foreground": "#05fad1"
+        "foreground": "#4EC9B0"
+      }
+    },
+    {
+      "name": "Primitive Types",
+      "scope": "support.type.namespace",
+      "settings": {
+        "foreground": "#4EC9B0"
+      }
+    },
+    {
+      "name": "Optional Type",
+      "scope": "support.type.optional",
+      "settings": {
+        "foreground": "#4EC9B0"
+      }
+    },
+    {
+      "name": "Map Type",
+      "scope": "support.type.map",
+      "settings": {
+        "foreground": "#4EC9B0"
       }
     },
     {
@@ -90,5 +131,21 @@
         "foreground": "#8BE9FD"
       }
     },
-  ]
+  ],
+  "semanticTokenColors": {
+    "parameter": {
+      "foreground": "#9df0fb",
+      "fontStyle": "italic"
+    },
+    "type": {
+      "foreground": "#4EC9B0",
+    },
+    "constant": {
+      "foreground": "#FFCB6B",
+      "fontStyle": "bold"
+    },
+    "varDeclItem": {
+      "foreground": "#348fde",
+    },
+  }
 }
